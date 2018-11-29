@@ -7,7 +7,15 @@
 ---
 
 #### Motivation​
- ​@box[text-orange span-80 fragment](Mars Attacks # Greetings earthlings. We come in peace!)
+@snap[north-west span-35]
+@box[bg-green text-white demo-box-pad](1. Plan#Lorem ipsum dolor sit amet eiusmod)
+@snapend
+
+
+​@box[text-orange span-80 fragment](Mars Attacks # Greetings earthlings. We come in peace!)
+
+@box[bg-orange text-white rounded demo-box-pad](Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.)
+
 - Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
 - But then we add getters and setters....​
        
@@ -98,10 +106,10 @@ public interface Vehicle {
 
 +++
 ### Data Abstractions
-@color[orange](
-- Implementation hiding is not about putting a layer of functions over variables
-- **Implementation hiding is about abstractions**
-- A class should expose abstract interfaces that allow its users to manipulate the _essence_ of the data)
+
+- @color[grey](Implementation hiding is not about putting a layer of functions over variables)
+- @color[grey](**Implementation hiding is about abstractions**)
+- @color[orange](A class should expose abstract interfaces that allow its users to manipulate the _essence_ of the data)
 - Data should be expressed in abstract terms, just using getters and setters is not enough.
 - Serious thought has to be put into the best way to represent the data an object contains.
 ---
