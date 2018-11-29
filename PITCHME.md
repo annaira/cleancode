@@ -206,12 +206,14 @@ public class Circle implements Shape {
 
 +++
 #### Train Wrecks
-- Example: `final String outputDir = ctxt.getOptions() .getScratchDir().getAbsolutePath();`
-    - violates LoD because it calls the `getScratchDir()` 
-    function on the return value of `getOptions()` 
+```Java
+final String outputDir = ctxt.getOptions() .getScratchDir().getAbsolutePath();
+```
+- violates LoD because it calls the `getScratchDir()` function on the return value of `getOptions()` 
     and then calls `getAbsolutePath()` on the return value of `getScratchDir() `
 - This kind of code is often called a _train wreck_ because it looks like coupled train cars.
 - Chains of calls like this are generally considered to be sloppy style and should be avoided.
++++
 - It is better to split the code up as follows:
 ```Java
 Options opts = ctxt.getOptions();
