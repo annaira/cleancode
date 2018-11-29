@@ -256,6 +256,9 @@ BufferedOutputStram bos = ctxt.createScratchFileStram(classFileName);
 - That seems like a reasonable thing for an object to do.
 - This allows `ctxt` to hide its internals and prevents the current function from having to violate the Law of Demeter.
 ---
+###
+Data Transfer Objects 
+---
 ### Actionable Advice
 
 Reflect whether the problem at hand is better solved with new data structures or new functions.
