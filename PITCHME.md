@@ -7,23 +7,11 @@
 ---
 
 #### Motivation​
-@snap[north-west span-35]
-@box[bg-green text-white demo-box-pad](1. Plan#Lorem ipsum dolor sit amet eiusmod)
-@snapend
+---?image=http://spark.apache.org/docs/latest/img/cluster-overview.png
 
+@quote[Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​]
 
-@box[bg-grey text-white rounded demo-box-pad](Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.)
-
-- Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
-- But then we add getters and setters....​
-       
-  
-      Getters and Setters​
-  
-               vs​
-  
-           Encapsulation​
-
+@quote[But we need to access the data... Let's add getters and setters!]
 
 ---
 
