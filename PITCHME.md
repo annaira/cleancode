@@ -103,7 +103,7 @@ public interface Vehicle {
 +++
 - **Objects hide their data behind abstractions and expose functions that operate on the data.**
 - **Data structures expose their data and have no meaningful functions.**
-- These defintions are complimentary and virtual opposites.
+- These definitions are complimentary and virtual opposites.
 - The difference may seem trivial but has far-reaching implications.
 +++
 ```Java
@@ -260,8 +260,8 @@ OutputStream os = ctxt.createScratchFileStream(classFileName);
 - These are called data transfer objects, short DTO.
 +++
 #### Beans
-- Beans have private variables manipulated by getters and setters.
-The quasi-encapsulattion of beans seems to make some OO purists feel better but usually provides no other benefit.
+Beans have private variables manipulated by getters and setters.
+The quasi-encapsulation of beans seems to make some OO purists feel better but usually provides no other benefit.
 ```Java
 public class Address {
     private String street;
