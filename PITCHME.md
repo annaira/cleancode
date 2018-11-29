@@ -177,7 +177,9 @@ public class Circle implements Shape {
 +++
 #### There is a fundamental dichotomy between objects and data structures.
 
-@quote[Procedural code (code using data structures) makes it easy to add new functions without changing the existing data structures. OO code, on the other hand, makes it easy to add new classes without changing existing functions.​]
+@quote[Procedural code makes it easy to add new functions without changing the existing data structures. OO code, on the other hand, makes it easy to add new classes without changing existing functions.​]
++++
+#### There is a fundamental dichotomy between objects and data structures.
 
 @quote[Procedural code makes it hard to add new data structures because all the functions must change. OO code makes it hard to add new functions because all the classes must change.]
 +++
