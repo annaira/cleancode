@@ -21,7 +21,8 @@
 
 ---
 
-@title[Data Abstractions]
+@title[Data Abstractions]git rm -r --cached some-directory
+
 
 Two examples of Java code representing a Point on the Cartesian plane.
 
