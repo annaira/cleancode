@@ -14,7 +14,7 @@
 ---
 
 ### Data Abstractions
-Two examples of Java code representing a Point on the Cartesian plane.
+---
 ###### Concrete Point
 ```Java
 public class Point {
@@ -30,6 +30,7 @@ public interface Point{
   void setCartesian(double x, double y);
 }
 ```
+@[1-9](Two examples of Java code representing a Point on the Cartesian plane.)
 
 +++
 ###### Abstract Point
@@ -99,8 +100,42 @@ public interface Vehicle {
 ---
 
 ### Data/Object Anti-Symmetry
-
+- **Objects hide their data behind abstractions and expose functions that operate on the data.**
+- **Data structures expose their data and have no meaningful functions.**
+- These defintions are complimentary and virtual opposites.
+- The difference may seem trivial but has far-reaching implications.
 ---
+```Java
+public class Square {
+    public Point topLeft;
+    public double side;
+}
+public class Rectangle {
+    public Point topLeft;
+    public double height;
+    public double width;
+}
+public class Circle {
+    public Point center;
+    public double radius;
+}
+public class Geometry {
+    public final double PI = 3.141592653589793;
+    public double area(Object shape){
+        if(shape instanceof Square) {
+            Square square = (Square) shape;
+            return square.side * square.side;
+        } else if (shape instanceof Rectangle){
+            Rectangle rectangle = (Rectangle) shape;
+            return rectangle.height * rectangle.width;
+        } else if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            return PI * circle.radius * circle.radius;
+        }
+        throw new NoSuchShapeException();
+    }
+}
+```
 #### Actionable Advice
 ---
 #### Discussion
