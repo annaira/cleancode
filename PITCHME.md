@@ -5,8 +5,8 @@ Chapter 6 of Clean Code ​
 by Robert C. Martin​
 
 ---
-
-### Motivation​
++++
+@title[Motivation​]
 
 - Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
 - But then we add getters and setters....​
@@ -18,22 +18,19 @@ by Robert C. Martin​
   
            Encapsulation​
 
----
-
-### Data Abstractions
++++
+@title[Data Abstractions]
 
 Two examples of Java code representing a Point on the Cartesian plane.
 
-+++
-@title[Concrete Point]
+### Concrete Point
 ```Java
 public class Point {
     public double x;
     public double y;
 }
 ```
-+++
-@title[Abstract Point]
+### Abstract Point
 ```Java
 public interface Point{
   double getX();
