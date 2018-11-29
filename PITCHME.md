@@ -5,12 +5,28 @@
 ##### by Robert C. Martin​
 
 ---
+
 #### Motivation​
 
-@box[bg-grey text-white rounded demo-box-pad](Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​)
+
+@box[bg-grey text-white rounded demo-box-pad](Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.)
 
 
-@box[bg-grey text-white rounded demo-box-pad](But we need to access the data! Let's add getters and setters")
+
+@box[bg-slategray text-white rounded demo-box-pad](Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​)
+
+
+- Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
+- But then we add getters and setters....​
+       
+  
+      Getters and Setters​
+  
+               vs​
+  
+           Encapsulation​
+
+
 ---
 
 ### Data Abstractions
