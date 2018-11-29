@@ -175,8 +175,30 @@ public class Circle implements Shape {
 @[1-21](What happens if we add a new shape?)
 @[1-21](The existing functions are not affected.)
 +++
+#### There is a fundamental dichotomy between objects and data structures.
+
+@quote[Procedural code (code using data structures) makes it easy to add new functions without changing the existing data structures. OO code, on the other hand, makes it easy to add new classes without changing existing functions.​]
+
+@quote[Procedural code makes it hard to add new data structures because all the functions must change. OO code makes it hard to add new functions because all the classes must change.]
++++
+### Data/Object Anti-Symmetry
+- Objects 
+    - hide their data behind abstractions and
+    - expose functions that operate on the data.
+- Data structures 
+    - expose their data and
+    - have no meaningful functions.
 ---
-#### Actionable Advice
+### The Law of Demeter
+
+
+
 ---
-#### Discussion
+### Actionable Advice
+
+Reflect whether the problem at hand is better solved with new data structures or new functions.
+When we want to add new data types, objects and OO are most appropriate.
+When we want to add new functions, procedural code and data structures will be more appropriate.
+---
+### Discussion
 - Not blindly using getters and setters sounds nice but we need them for jooq in domain classes and they are the point of the DTO clases.
