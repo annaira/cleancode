@@ -4,8 +4,7 @@ Chapter 6 of Clean Code ​
 
 by Robert C. Martin​
 
----
-@title[Motivation​]
+---@title[Motivation​]
 
 - Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
 - But then we add getters and setters....​
@@ -18,18 +17,18 @@ by Robert C. Martin​
            Encapsulation​
 
 
-+++@title[Data Abstractions]
+---@title[Data Abstractions]
 
 Two examples of Java code representing a Point on the Cartesian plane.
 
-### Concrete Point
+##### Concrete Point
 ```Java
 public class Point {
     public double x;
     public double y;
 }
 ```
-### Abstract Point
+##### Abstract Point
 ```Java
 public interface Point{
   double getX();
@@ -51,8 +50,8 @@ Note:
 - The Concrete Point is obviously implemented rectangular coordinates
 - we are forced to manipulate the coordinates independently
 - implementation is exposed, this would still be true with private variables + getters and setters
----
 
 
-### Actionable Advice
+
+---@title[Actionable Advice]
 
