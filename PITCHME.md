@@ -107,16 +107,13 @@ public interface Vehicle {
 +++
 ```Java
 public class Square {
-    public Point topLeft;
     public double side;
 }
 public class Rectangle {
-    public Point topLeft;
     public double height;
     public double width;
 }
 public class Circle {
-    public Point center;
     public double radius;
 }
 public class Geometry {
@@ -136,19 +133,48 @@ public class Geometry {
     }
 }
 ```
-@[1-29](This is a procedural shape example.)
+@[1-28](This is a procedural shape example.)
 @[1-14](The shape classes are simple data structures without any behaviour.)
-@[14-29](All the behaviour is in the geometry class.)
-@[14-29](This design is procedural and not object-oriented.)
-@[14-29](There are circumstances where this can be the right choice.)
-@[14-29](What would happen if we add a `perimeter()` function to `Geometry`?)
+@[14-28](All the behaviour is in the geometry class.)
+@[14-28](This design is procedural and not object-oriented.)
+@[14-28](There are circumstances where this can be the right choice.)
+@[14-28](What would happen if we add a `perimeter()` function to `Geometry`?)
 @[1-14](The shape classes would not be affected!)
 @[1-14](And any other classes depending on the shape classes would not be affected.)
 @[1-14](What happens if we add a new shape?)
-@[14-29](We must change all the functions in `Geometry`.)
+@[14-28](We must change all the functions in `Geometry`.)
 @[1-29](The two conditions are diametrically opposed.)
-
-
++++
+```Java
+public class Square implements Shape {
+    private double side;
+    public double area() {
+        return side * side; 
+    }
+}
+public class Rectangle implements Shape {
+    public double height;
+    public double width;
+    public double area() { 
+        return height * width; 
+    }
+}
+public class Circle implements Shape {
+    public final double PI = 3.141592653589793;
+    public double radius;
+    public double area() { 
+        return PI * radius * radius; 
+    }
+}
+```
+@[1-21](This is an object-oriented solution.)
+@[1-21](The `area()` method is polymorphic.)
+@[1-21](The `Geometry` class is not needed anymore.)
+@[1-21](What would happen if we add a `perimeter()` function to `Shape`?)
+@[1-21](The shape classes would all be affected!)
+@[1-21](What happens if we add a new shape?)
+@[1-21](The existing functions are not affected.)
++++
 ---
 #### Actionable Advice
 ---
