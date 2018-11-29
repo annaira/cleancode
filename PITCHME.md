@@ -5,13 +5,12 @@
 ##### by Robert C. Martin​
 
 ---
-
 #### Motivation​
 
-@box[bg-slategray text-white rounded demo-box-pad](Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​)
+@box[bg-grey text-white rounded demo-box-pad](Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​)
 
 
-@box[bg-slategray text-white rounded demo-box-pad](But we need to access the data! Let's add getters and setters")
+@box[bg-grey text-white rounded demo-box-pad](But we need to access the data! Let's add getters and setters")
 ---
 
 ### Data Abstractions
