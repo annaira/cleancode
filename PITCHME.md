@@ -207,7 +207,9 @@ public class Circle implements Shape {
 +++
 #### Train Wrecks
 ```Java
-final String outputDir = ctxt.getOptions() .getScratchDir().getAbsolutePath();
+final String outputDir = ctxt.getOptions() 
+                             .getScratchDir()
+                             .getAbsolutePath();
 ```
 - violates LoD because it calls the `getScratchDir()` function on the return value of `getOptions()` 
     and then calls `getAbsolutePath()` on the return value of `getScratchDir() `
