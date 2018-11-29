@@ -202,8 +202,9 @@ public class Circle implements Shape {
     - objects created by `f`
     - objects passed as an argument to `f`
     - objects held in an instance variable of `C`
++++
 - In other words: Talk to friends, don't talk to strangers.
-- Example: final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
+- Example: `final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();`
     - violates LoD because it calls the `getScratchDir()` function on the return value of `getOptions()` and then calls `getAbsolutePath()` on the return value of `getScratchDir() `
 
 
