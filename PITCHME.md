@@ -202,15 +202,22 @@ public class Circle implements Shape {
     - objects created by `f`
     - objects passed as an argument to `f`
     - objects held in an instance variable of `C`
-+++
 - In other words: Talk to friends, don't talk to strangers.
+
++++
+#### Train Wrecks
 - Example: `final String outputDir = ctxt.getOptions() .getScratchDir().getAbsolutePath();`
     - violates LoD because it calls the `getScratchDir()` 
     function on the return value of `getOptions()` 
     and then calls `getAbsolutePath()` on the return value of `getScratchDir() `
-
-
-
+- This kind of code is often called a _train wreck_ because it looks like coupled train cars.
+- Chains of calls like this are generally considered to be sloppy style and should be avoided.
+- It is better to split the code up as follows:
+```Java
+Options opts = ctxt.getOptions();
+File scratchDir = opts.getScratchDir();
+final String outputDir = scratchDir.getAbsolutePath();
+```
 +++
 
 
@@ -223,3 +230,4 @@ When we want to add new functions, procedural code and data structures will be m
 ---
 ### Discussion
 - Not blindly using getters and setters sounds nice but we need them for jooq in domain classes and they are the point of the DTO clases.
+- Method chaining is not a train wreck and not violating the Law of demeter.
