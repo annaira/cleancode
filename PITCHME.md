@@ -4,10 +4,9 @@
 
 ##### by Robert C. Martin​
 
----
-
+---?image=https://images.freeimages.com/images/large-previews/d36/slanted-blue-tiles-1632767.png
 #### Motivation​
----?image=http://spark.apache.org/docs/latest/img/cluster-overview.png
+
 
 @quote[Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​]
 
