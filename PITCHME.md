@@ -14,7 +14,7 @@
 ---
 
 ### Data Abstractions
----
++++
 ###### Concrete Point
 ```Java
 public class Point {
@@ -104,7 +104,7 @@ public interface Vehicle {
 - **Data structures expose their data and have no meaningful functions.**
 - These defintions are complimentary and virtual opposites.
 - The difference may seem trivial but has far-reaching implications.
----
++++
 ```Java
 public class Square {
     public Point topLeft;
@@ -136,6 +136,7 @@ public class Geometry {
     }
 }
 ```
+---
 #### Actionable Advice
 ---
 #### Discussion
