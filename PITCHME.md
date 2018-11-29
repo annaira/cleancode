@@ -186,14 +186,18 @@ public class Circle implements Shape {
 ### Data/Object Anti-Symmetry
 - Objects 
     - hide their data behind abstractions and
-    - expose functions that operate on the data.
+    - expose functions that operate on the data and
+    - make it easy to add more objects.
 - Data structures 
     - expose their data and
-    - have no meaningful functions.
+    - have no meaningful functions and
+    - make it easy to add new functions.
 ---
 ### The Law of Demeter
 
-
+@quote[Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.
+       Each unit should only talk to its friends; don't talk to strangers.
+       Only talk to your immediate friends.] (https://en.wikipedia.org/wiki/Law_of_Demeter)
 
 ---
 ### Actionable Advice
