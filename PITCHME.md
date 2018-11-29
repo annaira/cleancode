@@ -243,6 +243,7 @@ final String outputDir = ctxt.options.scratchDir.absolutePath;
 ctxt.getAbsolutePathOfScratchDirectoryOption;
 ```
 - This would lead to an explosion of methods in the `ctxt` object.
++++
 ```Java
 ctxt.getScratchDirectoryOption().getAbsolutePath();
 ```
