@@ -24,13 +24,28 @@ by Robert C. Martin​
 
 Two examples of Java code representing a Point on the Cartesian plane.
 
-?gist=annaira/d7bffc245094dbd5632bf503fe4d7929&lang=Java&title=Concrete Point
 
++++
+@title[Concrete Point]
+
+```Java
+public class Point {
+    public double x;
+    public double y;
+}
+```
 @[1-4](The implementation is completely exposed)
 
-?gist=annaira/effa6cad2cc1e04cfa0ed8719d314e7a&lang=Java&title=Abstract Point
++++
+@title[Abstract Point]
 
-@[1-8](The implementation is completely hidden)
+```Java
+public class Point {
+    public double x;
+    public double y;
+}
+```
+@[1-8](The implementation is completely hidden, it could be done with polar coordinates or rectangular coordinates, and that doesn't matter.)
 
 
 Note:
@@ -39,6 +54,7 @@ Note:
 - Both on the desktop and in the cloud
 - Learn more on the GitPitch website at https://gitpitch.com
 
+---
 ![Flux Explained](https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
 
 
