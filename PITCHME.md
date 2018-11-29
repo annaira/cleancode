@@ -136,6 +136,19 @@ public class Geometry {
     }
 }
 ```
+@[1-29](This is a procedural shape example.)
+@[1-14](The shape classes are simple data structures without any behaviour.)
+@[14-29](All the behaviour is in the geometry class.)
+@[14-29](This design is procedural and not object-oriented.)
+@[14-29](There are circumstances where this can be the right choice.)
+@[14-29](What would happen if we add a `perimeter()` function to `Geometry`?)
+@[1-14](The shape classes would not be affected!)
+@[1-14](And any other classes depending on the shape classes would not be affected.)
+@[1-14](What happens if we add a new shape?)
+@[14-29](We must change all the functions in `Geometry`.)
+@[1-29](The two conditions are diametrically opposed.)
+
+
 ---
 #### Actionable Advice
 ---
