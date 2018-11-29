@@ -12,7 +12,7 @@
 @snapend
 
 
-@box[bg-orange text-white rounded demo-box-pad](Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.)
+@box[bg-grey text-white rounded demo-box-pad](Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.)
 
 - Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
 - But then we add getters and setters....​
