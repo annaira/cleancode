@@ -256,12 +256,13 @@ OutputStream os = ctxt.createScratchFileStream(classFileName);
 - This allows `ctxt` to hide its internals and prevents the current function from having to violate the Law of Demeter.
 ---
 ### Data Transfer Objects
++++
 - The quintessential form of a data structure is a class with public variables and no functions.
 - These are called data transfer objects, short DTO.
+- Beans have private variables manipulated by getters and setters.
+- The quasi-encapsulation of beans seems to make some OO purists feel better but usually provides no other benefit.
 +++
 #### Beans
-Beans have private variables manipulated by getters and setters.
-The quasi-encapsulation of beans seems to make some OO purists feel better but usually provides no other benefit.
 ```Java
 public class Address {
     private String street;
@@ -287,10 +288,9 @@ public class Address {
 - They should not be treated as objects, as this creates a hybrid.
 ---
 ### Actionable Advice
-
-Reflect whether the problem at hand is better solved with new data structures or new functions.
-When we want to add new data types, objects and OO are most appropriate.
-When we want to add new functions, procedural code and data structures will be more appropriate.
+- Reflect whether the problem at hand is better solved with new data structures or new functions.
+- When we want to add new data types, objects and OO are most appropriate.
+- When we want to add new functions, procedural code and data structures will be more appropriate.
 ---
 ### Discussion
 - Uncle Bob would call our DTOs beans. Why do they have getters and setters?
