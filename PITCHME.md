@@ -253,7 +253,6 @@ ctxt.getScratchDirectoryOption().getAbsolutePath();
 ```Java
 BufferedOutputStram bos = ctxt.createScratchFileStram(classFileName);
 ```
-- That seems like a reasonable thing for an object to do.
 - This allows `ctxt` to hide its internals and prevents the current function from having to violate the Law of Demeter.
 ---
 ###
