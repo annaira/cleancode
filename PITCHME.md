@@ -100,6 +100,7 @@ public interface Vehicle {
 ---
 
 ### Data/Object Anti-Symmetry
++++
 - **Objects hide their data behind abstractions and expose functions that operate on the data.**
 - **Data structures expose their data and have no meaningful functions.**
 - These defintions are complimentary and virtual opposites.
@@ -194,7 +195,7 @@ public class Circle implements Shape {
     - make it easy to add new functions.
 ---
 ### The Law of Demeter
-
++++
 - The **Law of Demeter (LoD)** is also called **principle of least knowledge**.
 - It is a specific case of loose coupling.
 - It says that a method `f` of a class `C` should only call the methods of:
@@ -227,8 +228,32 @@ final String outputDir = scratchDir.getAbsolutePath();
 final String outputDir = ctxt.options.scratchDir.absolutePath;
 ```
 +++
-
-
+#### Hybrids
+- This confusion can lead to objects that are half object and half data structure.
+- They have functions that do significant things and
+- public variables or accessors that make the private variables public
+- It is hard to add functions and also hard to add new data structures
+- They are the worst of both worlds.
++++
+#### Hiding structure
+- What if `ctxt`, `options`, and `scratchDir` are objects with real behaviour?
+- As objects should hide their internal structure we should not navigate through them.
+- How to get the absolute path of the scratch directory then?
+```Java
+ctxt.getAbsolutePathOfScratchDirectoryOption;
+```
+- This would lead to an explosion of methods in the `ctxt` object.
+```Java
+ctxt.getScratchDirectoryOption().getAbsolutePath();
+```
+- This presumes that `getScratchDirectoryOption()` returns a data structure and not an object.
+- Both options don't feel good
+- If `ctxt` is an object, we should be telling it to _do something_; we should not be asking it about its internals.
+```Java
+BufferedOutputStram bos = ctxt.createScratchFileStram(classFileName);
+```
+- That seems like a reasonable thing for an object to do.
+- This allows `ctxt` to hide its internals and prevents the current function from having to violate the Law of Demeter.
 ---
 ### Actionable Advice
 
