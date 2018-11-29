@@ -1,8 +1,8 @@
 ## Objects and Data Structures 
 
-####Chapter 6 of Clean Code ​
+#### Chapter 6 of Clean Code ​
 
-###by Robert C. Martin​
+### by Robert C. Martin​
 
 ---
 
@@ -25,14 +25,14 @@
 
 Two examples of Java code representing a Point on the Cartesian plane.
 
-##### Concrete Point
+###### Concrete Point
 ```Java
 public class Point {
     public double x;
     public double y;
 }
 ```
-##### Abstract Point
+###### Abstract Point
 ```Java
 public interface Point{
   double getX();
@@ -43,9 +43,10 @@ public interface Point{
   void setPolar(double r, double theta);
 }
 ```
-
+@[1-8](implementation is completely hidden, it could have been done with polar coordinates or rectangular coordinates)
+@[2-3](enforced access policy )
 Note:
-- Abstract point: implementation is completely hidden, it could be done with polar coordinates or rectangular coordinates
+- Abstract point: 
 - we don't care about the implementation
 - Implementation unmistakenly represents data structure.
 - Even more than that: the methods enforce an access policy:
