@@ -251,7 +251,7 @@ ctxt.getScratchDirectoryOption().getAbsolutePath();
 - Both options don't feel good
 - If `ctxt` is an object, we should be telling it to _do something_; we should not be asking it about its internals.
 ```Java
-BufferedOutputStram bos = ctxt.createScratchFileStram(classFileName);
+OutputStream os = ctxt.createScratchFileStream(classFileName);
 ```
 - This allows `ctxt` to hide its internals and prevents the current function from having to violate the Law of Demeter.
 ---
