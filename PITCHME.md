@@ -1,10 +1,12 @@
-# Objects and Data Structures 
+## Objects and Data Structures 
 
-Chapter 6 of Clean Code ​
+####Chapter 6 of Clean Code ​
 
-by Robert C. Martin​
+###by Robert C. Martin​
 
----@title[Motivation​]
+---
+
+@title[Motivation​]
 
 - Encapsulation is good! We make our variables private so there is little dependence on them, and we are free to change the implementation!​
 - But then we add getters and setters....​
@@ -17,7 +19,9 @@ by Robert C. Martin​
            Encapsulation​
 
 
----@title[Data Abstractions]
+---
+
+@title[Data Abstractions]
 
 Two examples of Java code representing a Point on the Cartesian plane.
 
@@ -53,5 +57,7 @@ Note:
 
 
 
----@title[Actionable Advice]
+---
+
+@title[Actionable Advice]
 
