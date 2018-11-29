@@ -222,6 +222,10 @@ Options opts = ctxt.getOptions();
 File scratchDir = opts.getScratchDir();
 final String outputDir = scratchDir.getAbsolutePath();
 ```
+- Even less confusing is the use of public variables of data structures:
+```Java
+final String outputDir = ctxt.options.scratchDir.absolutePath;
+```
 +++
 
 
