@@ -22,9 +22,7 @@
 ---
 
 ### Data Abstractions
-
 Two examples of Java code representing a Point on the Cartesian plane.
-
 ###### Concrete Point
 ```Java
 public class Point {
@@ -43,7 +41,6 @@ public interface Point{
   void setPolar(double r, double theta);
 }
 ```
-
 +++
 
 ### Data Abstractions
