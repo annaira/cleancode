@@ -195,9 +195,9 @@ public class Circle implements Shape {
 ---
 ### The Law of Demeter
 
-@quote[Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.
-       Each unit should only talk to its friends; don't talk to strangers.
-       Only talk to your immediate friends.] (https://en.wikipedia.org/wiki/Law_of_Demeter)
+@quote[Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.]
+@quote[Each unit should only talk to its friends; don't talk to strangers.]
+@quote[Only talk to your immediate friends.] (https://en.wikipedia.org/wiki/Law_of_Demeter)
 
 ---
 ### Actionable Advice
