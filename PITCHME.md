@@ -195,9 +195,21 @@ public class Circle implements Shape {
 ---
 ### The Law of Demeter
 
-@quote[Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.]
-@quote[Each unit should only talk to its friends; don't talk to strangers.]
-@quote[Only talk to your immediate friends.] (https://en.wikipedia.org/wiki/Law_of_Demeter)
+- The **Law of Demeter (LoD)** is also called **principle of least knowledge**.
+- It is a specific case of loose coupling.
+- It says that a method `f` of a class `C` should only call the methods of:
+    - `C`
+    - objects created by `f`
+    - objects passed as an argument to `f`
+    - objects held in an instance variable of `C`
+- In other words: Talk to friends, don't talk to strangers.
+- Example: final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
+    - violates LoD because it calls the `getScratchDir()` function on the return value of `getOptions()` and then calls `getAbsolutePath()` on the return value of `getScratchDir() `
+
+
+
++++
+
 
 ---
 ### Actionable Advice
