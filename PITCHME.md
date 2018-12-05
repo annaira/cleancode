@@ -5,9 +5,7 @@
 ##### by Robert C. Martin​
 
 ---
-#### Motivation​
-
-##### Testing in the 90s
+### Testing in the 90s
 
 A simple timer written in C++ with the following signature:
 ```c++
@@ -17,10 +15,7 @@ void Timer::ScheduleComand(Comand* theComand, int milliseconds)
 @[1](But how can that be tested?)
 
 +++
-
-@quote[I cobbled together a simple driver programm that listened to the keyboard. Every time a character was typed, 
-it would schedule a command that would type the character five seconds later. Then I tapped out a rhythmic melody on the 
-keyboard and waited for that melody to replay on the screen five seconds later.]
+@quote[I cobbled together a simple driver programm that listened to the keyboard. Every time a character was typed, it would schedule a command that would type the character five seconds later. Then I tapped out a rhythmic melody on the keyboard and waited for that melody to replay on the screen five seconds later.]
 
 Note:
 
