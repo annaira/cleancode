@@ -96,9 +96,14 @@ public void testGetPageHieratchyAsXml() throws Exception {
 }
 ```
 @[1-16](This test is rather difficult to understand)
-@[2-4](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
-@[12-15](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
+@[2-4](There is a lot of duplicate code: repeated calls to `addPage`)
+@[12-15](There is a lot of duplicate code: repeated calls to `assertSubString`)
 @[1-16](The test is loaded with details that cloud the expressiveness of the test.)
+@[2-4](The `PathParser` calls transform strings into `PagePath` instances used by the crawler.)
+@[2-4](This is irrelevant to the test and obfuscates intent.)
+@[8-10](This is just noise.)
+
+
 
 ---
 ### Discussion
