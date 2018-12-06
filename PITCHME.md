@@ -33,12 +33,13 @@ Note:
 - **Second Law** You may not write more of a unit test than is sufficient to fail, and not compiling is failing.
 - **Third Law** You may not write more production code than is sufficient to pass the current failing test.
 
-Note:
++++
+### The three laws of TDD
+
 - writing unit tests first is just the tip of the iceberg when it comes to TDD
 - the three laws result in a 30s cycle
 - test and production code are written together within seconds
 - this way there are a lot of test, there might be more test code than production code
-
 ---
 
 ### Keeping tests clean
