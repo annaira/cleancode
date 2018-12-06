@@ -49,12 +49,14 @@ Note:
 +++
 
 #### Tests enable the -ilities
- Unit tests ensure the
+Unit tests ensure the
+ 
   - flexibility,
   - maintainability, and 
   - reusability
  
- of the code base.
+ 
+of the code base.
  
  
  - No tests lead to fear of undetected bugs.
@@ -66,36 +68,35 @@ Note:
 Readability of test code is more important than readability of production code.
 
 How to achieve readability?
+
+
 - clarity
 - simplicity
 - density of expression
 
 +++
 ```Java
-public class Test 
-{
-    public void testGetPageHieratchyAsXml() throws Exception 
-    {
-        crawler.addPage(root, PathParser.parse("PageOne"));        
-        crawler.addPage(root, PathParser.parse("PageOne.ChildOne"));        
-        crawler.addPage(root, PathParser.parse("PageTwo"));
-        
-        request.setResource("root");
-        request.addInput("type", "pages");
-        Responder responder = new SerializedPageResponder();
-        SimpleResponse response = (SimpleReponse) responder.makeResponse(new FitNesseContext(root), request);
-        String xml = response.getContent();
-        
-        assertEquals("text/xml", response.getContentType());
-        assertSubString("<name>PageOne</name>", xml);
-        assertSubString("<name>PageTwo</name>", xml);
-        assertSubString("<name>ChildOne</name>", xml);        
-    }
+public void testGetPageHieratchyAsXml() throws Exception {
+    crawler.addPage(root, PathParser.parse("PageOne"));        
+    crawler.addPage(root, PathParser.parse("PageOne.ChildOne"));        
+    crawler.addPage(root, PathParser.parse("PageTwo"));
+    
+    request.setResource("root");
+    request.addInput("type", "pages");
+    Responder responder = new SerializedPageResponder();
+    SimpleResponse response = (SimpleReponse) responder.makeResponse(new FitNesseContext(root), request);
+    String xml = response.getContent();
+    
+    assertEquals("text/xml", response.getContentType());
+    assertSubString("<name>PageOne</name>", xml);
+    assertSubString("<name>PageTwo</name>", xml);
+    assertSubString("<name>ChildOne</name>", xml);        
 }
 ```
-@[3-19](This test is rather difficult to understand)
-@[3-19](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
-@[3-19](The test is loaded with details that cloud the expressiveness of the test.)
+@[1-16](This test is rather difficult to understand)
+@[2-6](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
+@[11-15](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
+@[1-16](The test is loaded with details that cloud the expressiveness of the test.)
 
 ---
 ### Discussion
