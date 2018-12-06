@@ -219,7 +219,6 @@ public void testGetPageHierarchyAsXml() throws Exception {
        
    thenResponseShouldBeXML();
 }
-
 public void testGetPageHierarchyHasRightTags() throws Exception {
    givenPages("PageOne", "PageOne.ChildOne", "PageTwo");
    
@@ -230,9 +229,12 @@ public void testGetPageHierarchyHasRightTags() throws Exception {
 }
 ```
 +++
+### One Assert per Test
 - The tests come to a single conclusion and are easy to understand.
 - The common given-when-then convention is also used, making it even easier to read.
 - A disadvantage is duplicated code caused by the split.
++++
+### One Assert per Test
 - One solution can be the Template Method pattern
     - put given/when parts in the base class
     - put then parts in different derivatives
