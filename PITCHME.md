@@ -99,14 +99,68 @@ public void testGetPageHieratchyAsXml() throws Exception {
 @[2-4](There is a lot of duplicate code: repeated calls to `addPage`)
 @[12-15](There is a lot of duplicate code: repeated calls to `assertSubString`)
 @[1-16](The test is loaded with details that cloud the expressiveness of the test.)
-@[2-4](The `PathParser` calls transform strings into `PagePath` instances used by the crawler.)
+@[2-4](The `PathParser` call transforms strings into `PagePath` instances used by the crawler.)
 @[2-4](This is irrelevant to the test and obfuscates intent.)
 @[8-10](This is just noise.)
+@[1-16](This code was not designed to be read.)
 
++++
+### Clean tests
 
+```Java
+public void testGetPageHierarchyAsXml() throws Exception {
+    makePages("PageOne", "PageOne.ChildOne", "PageTwo");
+    
+    submitRequest("root", "type:pages");
+    
+    assertResponseIsXml();
+    assertResponseContains("<name>PageOne</name>", "<name>PageTwo</name>", "<name>ChildOne</name>");        
+}
+```
+@[1-16](This is the improved version)
+@[1-16](The Build-Operate-Check pattern is obvious from the structure.)
+@[1-16](The first part builds up the test data,)
+@[1-16](the second part operates on that test data,)
+@[1-16](and the third part checks that the operation yielded the expected results.)
 
++++
+#### Domain-Specific Testing Languages
+
+- build a domain-specific language for your tests
+- this makes tests more convenient to write and easier to read
+- the testing language evolves from continued refactoring
+
++++
+#### A Dual Standard
+- Test code does have different standards than production code.
+- It must still be **simple, succinct and expressive**
+- but it does **not need to be as efficient** as production code.
+
++++
+#### A Dual Standard
+```Java
+@Test
+public void turnOnLoTempAlarmAtThreashold() throws Exception {
+    hw.setTemp(WAY_TOO_COLD);
+    controller.tic();
+    assertTrue(hw.heaterState());
+    assertTrue(hw.blowerState());
+    assertFalse(hw.coolerState());
+    assertFalse(hw.hiTempAlarm());
+    assertTrue(hw.loTempAlarm());
+}
+```
+@[1-10](This test was part of a prototype for an environment control system.)
+@[1-10](It checks that the low temperature alarm, the heater, and the blower are all turned on when the temperature is "way too cold".)
+@[4](What is this `tic()` function?)
+@[1-10](This should not be the reader's concern!)
+@[1-10](The reader should think about whether they agree that the end state of the system is consistent with the temperature being "way too cold".)
 ---
+### One Assert per Test
+- Every test function in a JUnit test should have one and only one assert statement.
+- This may seem draconian, but it has advantages.
+- ---
 ### Discussion
-- 
+- There is a testing language evolving in our code base!
 - 
 - 
