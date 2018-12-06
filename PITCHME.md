@@ -238,12 +238,37 @@ public void testGetPageHierarchyHasRightTags() throws Exception {
 - One solution can be the Template Method pattern
     - put given/when parts in the base class
     - put then parts in different derivatives
++++
+### One Assert per Test
 - Another one would be separate test classes
     - put given/when in `@Before`
     - put then in each `@Test`
++++
+### One Assert per Test
 - This would be overkill for our example, Uncle Bob prefers the old version.
 - It is a good guideline, we should strive to keep the number of assertions minimal.
 +++
+#### Single Concept per Test
+```Java
+public void testAddMonths() {
+    SerialDate d1 = SerialDate.createInstance(31, 5, 2004);
+    
+    SerialDate d2 = SerialDate.addMonths(1, d1);
+    assertEquals(30, d2.getDayOfMonth());
+    assertEquals(6, d2.getMonth());
+    assertEquals(2004, d2.getYYYY());
+    
+    SerialDate d3 = SerialDate.addMonths(2, d1);
+    assertEquals(31, d3.getDayOfMonth());
+    assertEquals(7, d3.getMonth());
+    assertEquals(2004, d3.getYYYY());
+    
+    SerialDate d4 = SerialDate.addMonths(1, SerialDate.addMonths(1, d1));
+    assertEquals(30, d4.getDayOfMonth());
+    assertEquals(7, d4.getMonth());
+    assertEquals(2004, d4.getYYYY());
+}
+```
 ---
 ### Discussion
 - There is a testing language evolving in our code base!
