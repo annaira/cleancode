@@ -228,9 +228,11 @@ public void testGetPageHierarchyHasRightTags() throws Exception {
    
    whenRequestIsIssued("root", "type:pages");
        
-   thenResponseShouldContain("<name>PageOne</name>", "<name>PageTwo</name>", "<name>ChildOne</name>");        
+   thenResponseShouldContain(
+       "<name>PageOne</name>", "<name>PageTwo</name>", "<name>ChildOne</name>");        
 }
 ```
++++
 - The tests come to a single conclusion and are easy to understand.
 - The common given-when-then convention is also used, making it even easier to read.
 - A disadvantage is duplicated code caused by the split.
