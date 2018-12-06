@@ -269,6 +269,22 @@ public void testAddMonths() {
     assertEquals(2004, d4.getYYYY());
 }
 ```
++++
+#### Single Concept per Test
+- The test for `addMonths() should be split up into three independent tests because it tests three independent things.
+- _Given_ the last day of may (31st)
+    - _when_ you add 1 month, _then_ the day is the 30th
+    - _when_ you add 2 months, _then_ the day is the 31st   
+- _Given_ the last day of june (30th)
+    - _when_ you add 1 month, _then_ the day is the 30th
+- The rule is more obvious when stated this way!
++++
+#### Single Concept per Test
+
+The best rule is probably to minimize the number of asserts per concept and test just one concept per function.
+---
+### F.I.R.S.T.
+
 ---
 ### Discussion
 - There is a testing language evolving in our code base!
