@@ -97,7 +97,7 @@ public void testGetPageHieratchyAsXml() throws Exception {
 ```
 @[1-16](This test is rather difficult to understand)
 @[2-4](There is a lot of duplicate code: repeated calls to `addPage`)
-@[12-15](There is a lot of duplicate code: repeated calls to `assertSubString`)
+@[13-15](There is a lot of duplicate code: repeated calls to `assertSubString`)
 @[1-16](The test is loaded with details that cloud the expressiveness of the test.)
 @[2-4](The `PathParser` call transforms strings into `PagePath` instances used by the crawler.)
 @[2-4](This is irrelevant to the test and obfuscates intent.)
@@ -119,9 +119,9 @@ public void testGetPageHierarchyAsXml() throws Exception {
 ```
 @[1-16](This is the improved version)
 @[1-16](The Build-Operate-Check pattern is obvious from the structure.)
-@[1-16](The first part builds up the test data,)
-@[1-16](the second part operates on that test data,)
-@[1-16](and the third part checks that the operation yielded the expected results.)
+@[2](The first part builds up the test data,)
+@[4](the second part operates on that test data,)
+@[6-7](and the third part checks that the operation yielded the expected results.)
 
 +++
 #### Domain-Specific Testing Languages
@@ -155,6 +155,19 @@ public void turnOnLoTempAlarmAtThreashold() throws Exception {
 @[4](What is this `tic()` function?)
 @[1-10](This should not be the reader's concern!)
 @[1-10](The reader should think about whether they agree that the end state of the system is consistent with the temperature being "way too cold".)
+@[1-10](While reading the test, the eyes bounce back and forth between the name and the sense of the state being checked.)
++++
+#### A Dual Standard
+```Java
+@Test
+public void turnOnLoTempAlarmAtThreshold() throws Exception {
+    wayTooCold();
+    assertEquals("HBchL", hw.getState());
+}
+```
+@[1-10](This is an improved version of the test.)
+@[3](The detail of the `tic()` function is hidden now.)
+
 ---
 ### One Assert per Test
 - Every test function in a JUnit test should have one and only one assert statement.
