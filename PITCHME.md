@@ -167,7 +167,47 @@ public void turnOnLoTempAlarmAtThreshold() throws Exception {
 ```
 @[1-10](This is an improved version of the test.)
 @[3](The detail of the `tic()` function is hidden now.)
-
+@[4](Upper case means "on", lower case means "off".)
+@[4](The letters are in the order `{herater, blower, cooler, hi-temp-alarm, lo-temp-alarm}`.)
+@[4](This violates some clean code rules, but ones it is understood, it is very easy to read.)
++++
+#### A Dual Standard
+```Java
+@Test
+public void turnOnCoolerAndBlowerIfTooHot() throws Exception {
+    tooHot();
+    assertEquals("hBChl", hw.getState());
+}
+@Test
+public void turnOnHeaterAndBlowerIfTooCold() throws Exception {
+    tooCold();
+    assertEquals("HBchl", hw.getState());
+}
+@Test
+public void turnOnHiTempAlarmAtThreshold() throws Exception {
+    wayTooHot();
+    assertEquals("hBCHl", hw.getState());
+}
+@Test
+public void turnOnLoTempAlarmAtThreshold() throws Exception {
+    wayTooCold();
+    assertEquals("HBchL", hw.getState());
+}
+```
++++
+#### A Dual Standard
+```Java
+public String getState() {
+    String state = "";
+    state += heater ? "H" : "h";
+    state += blower ? "B" : "b";
+    state += cooler ? "C" : "c";
+    state += hiTempAlarm ? "H" : "h";
+    state += loTempAlarm ? "L" : "l";
+}
+```
+@[1-10](This is the `getState()` function.)
+@[1-10](It is not very efficient, Uncle Bob thinks he should probable have used `StringBuffer`.)
 ---
 ### One Assert per Test
 - Every test function in a JUnit test should have one and only one assert statement.
@@ -175,5 +215,3 @@ public void turnOnLoTempAlarmAtThreshold() throws Exception {
 - ---
 ### Discussion
 - There is a testing language evolving in our code base!
-- 
-- 
