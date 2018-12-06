@@ -168,8 +168,8 @@ public void turnOnLoTempAlarmAtThreshold() throws Exception {
 @[1-10](This is an improved version of the test.)
 @[3](The detail of the `tic()` function is hidden now.)
 @[4](Upper case means "on", lower case means "off".)
-@[4](The letters are in the order `{herater, blower, cooler, hi-temp-alarm, lo-temp-alarm}`.)
-@[4](This violates some clean code rules, but ones it is understood, it is very easy to read.)
+@[4](The letters are in the order `{heater, blower, cooler, hi-temp-alarm, lo-temp-alarm}`.)
+@[4](This violates some clean code rules, but once it is understood, it is very easy to read.)
 +++
 #### A Dual Standard
 ```Java
@@ -207,11 +207,42 @@ public String getState() {
 }
 ```
 @[1-10](This is the `getState()` function.)
-@[1-10](It is not very efficient, Uncle Bob thinks he should probable have used `StringBuffer`.)
+@[1-10](It is not very efficient, Uncle Bob thinks he should probable have used `StringBuffer`, but i's okay in test code.)
 ---
 ### One Assert per Test
 - Every test function in a JUnit test should have one and only one assert statement.
 - This may seem draconian, but it has advantages.
-- ---
++++
+### One Assert per Test
+```Java
+public void testGetPageHierarchyAsXml() throws Exception {
+   givenPages("PageOne", "PageOne.ChildOne", "PageTwo");
+   
+   whenRequestIsIssued("root", "type:pages");
+       
+   thenResponseShouldBeXML();
+}
+
+public void testGetPageHierarchyHasRightTags() throws Exception {
+   givenPages("PageOne", "PageOne.ChildOne", "PageTwo");
+   
+   whenRequestIsIssued("root", "type:pages");
+       
+   thenResponseShouldContain("<name>PageOne</name>", "<name>PageTwo</name>", "<name>ChildOne</name>");        
+}
+```
+- The tests come to a single conclusion and are easy to understand.
+- The common given-when-then convention is also used, making it even easier to read.
+- A disadvantage is duplicated code caused by the split.
+- One solution can be the Template Method pattern
+    - put given/when parts in the base class
+    - put then parts in different derivatives
+- Another one would be separate test classes
+    - put given/when in `@Before`
+    - put then in each `@Test`
+- This would be overkill for our example, Uncle Bob prefers the old version.
+- It is a good guideline, we should strive to keep the number of assertions minimal.
++++
+---
 ### Discussion
 - There is a testing language evolving in our code base!
