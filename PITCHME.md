@@ -231,18 +231,18 @@ public void testGetPageHierarchyHasRightTags() throws Exception {
 +++
 ### One Assert per Test
 - The tests come to a single conclusion and are easy to understand.
-- The common given-when-then convention is also used, making it even easier to read.
+- The common _given-when-then_ convention is also used, making it even easier to read.
 - A disadvantage is duplicated code caused by the split.
 +++
 ### One Assert per Test
 - One solution can be the Template Method pattern
-    - put given/when parts in the base class
-    - put then parts in different derivatives
+    - put _given/when_ parts in the base class
+    - put _then_ parts in different derivatives
 +++
 ### One Assert per Test
 - Another one would be separate test classes
-    - put given/when in `@Before`
-    - put then in each `@Test`
+    - put _given/when_ in `@Before`
+    - put _then_ in each `@Test`
 +++
 ### One Assert per Test
 - This would be overkill for our example, Uncle Bob prefers the old version.
@@ -284,7 +284,18 @@ public void testAddMonths() {
 The best rule is probably to minimize the number of asserts per concept and test just one concept per function.
 ---
 ### F.I.R.S.T.
-
++++
+### F.I.R.S.T.
+- **F**ast
+- **I**ndependent
+- **R**epeatable
+- **S**elf-Validating
+- **T**imely 
++++
+### F.I.R.S.T.
+**Fast** Tests should be fast. They should run quickly. When tests run slow, you won't want to run them frequently.
+If you don't run them frequently, you won't find problems early enough to fix them easily. You won't feel as free to clean up the code.
+Eventually the code will begin to rot.
 ---
 ### Discussion
 - There is a testing language evolving in our code base!
