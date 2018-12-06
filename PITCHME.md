@@ -75,6 +75,8 @@ How to achieve readability?
 - density of expression
 
 +++
+### Clean tests
+
 ```Java
 public void testGetPageHieratchyAsXml() throws Exception {
     crawler.addPage(root, PathParser.parse("PageOne"));        
@@ -94,8 +96,8 @@ public void testGetPageHieratchyAsXml() throws Exception {
 }
 ```
 @[1-16](This test is rather difficult to understand)
-@[2-6](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
-@[11-15](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
+@[2-4](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
+@[12-15](There is a lot of duplicate code: repeated calls to `addPage` and `assertSubString`)
 @[1-16](The test is loaded with details that cloud the expressiveness of the test.)
 
 ---
