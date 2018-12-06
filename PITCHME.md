@@ -65,14 +65,11 @@ of the code base.
 ---
 ### Clean tests
 
-Readability of test code is more important than readability of production code.
-
-How to achieve readability?
-
-
-- clarity
-- simplicity
-- density of expression
+- Readability of test code is more important than readability of production code.
+- How to achieve readability?
+    - clarity
+    - simplicity
+    - density of expression
 
 +++
 ### Clean tests
@@ -207,7 +204,7 @@ public String getState() {
 }
 ```
 @[1-10](This is the `getState()` function.)
-@[1-10](It is not very efficient, Uncle Bob thinks he should probable have used `StringBuffer`, but i's okay in test code.)
+@[1-10](It is not very efficient, Uncle Bob thinks he should probable have used `StringBuffer`, but it's okay in test code.)
 ---
 ### One Assert per Test
 - Every test function in a JUnit test should have one and only one assert statement.
